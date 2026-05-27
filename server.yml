@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: spire-server
+  namespace: spire
+spec:
+  selector:
+    matchLabels:
+      app: spire-server
+  serviceName: spire-server
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: spire-server
+    spec:
+      serviceAccountName: spire-server
+      containers:
+      - name: spire-server
+        image: ghcr.io/spiffe/spire-server:1.8.0
+        args:
+        - -config
+        - /run/spire/config/server.conf
+        volumeMounts:
+        - name: spire-config
+          mountPath: /run/spire/config
+          readOnly: true
+      volumes:
+      - name: spire-config
+        configMap:
+          name: spire-server
