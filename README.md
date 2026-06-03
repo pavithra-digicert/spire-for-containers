@@ -1,4 +1,4 @@
-# Identity for a Agent in Container
+# Identity for an Agent in a Container
 
 Proof of concept: Give an  agent a cryptographic identity - the same idea as SPIRE/SPIFFE for containers.
 
