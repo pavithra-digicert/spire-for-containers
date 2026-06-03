@@ -7,5 +7,6 @@ The "agent" folder contains the bindings to the SPIRE agent. (Similar for the "s
 The workload just sleeps to show a service running in a container as a server.
 
 Next Step: Currently researcher-agent is a stub. Use an agent to convey the concept. 
+
 ---
 
